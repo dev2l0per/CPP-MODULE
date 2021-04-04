@@ -20,7 +20,7 @@ int main()
 	while (1)
 	{
 		phonebook.print_header();
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (input == "ADD")
 		{
 			Contact new_contact;
