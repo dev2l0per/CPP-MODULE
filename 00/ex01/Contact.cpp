@@ -79,41 +79,64 @@ std::string	Contact::get_field(std::string data)
 		return "Invalid Field";
 }
 
-void		Contact::init_contact(void)
+int		Contact::init_contact(void)
 {
 	std::string input;
 
 	std::cout << "Enter Your First Name : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_first_name(input);
 	std::cout << "Enter Your Last Name : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_last_name(input);
 	std::cout << "Enter Your Nickname : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_nickname(input);
 	std::cout << "Enter Your Login : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_login(input);
 	std::cout << "Enter Your Postal Address : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_postal_address(input);
 	std::cout << "Enter Your Email Address : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_email_address(input);
 	std::cout << "Enter Your Phone Number : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_phone_number(input);
 	std::cout << "Enter Your Birthdat Date : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_birthday_date(input);
 	std::cout << "Enter Your Favorite Meal : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_favorite_meal(input);
 	std::cout << "Enter Your Underwear Color : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_underwear_color(input);
 	std::cout << "Enter Your Darkest Secret : ";
 	std::getline(std::cin, input);
+	if (std::cin.eof() == true)
+		return (-1);
 	this->set_darkest_secret(input);
+	return (0);
 }

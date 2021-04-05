@@ -45,7 +45,7 @@ class Contact
 		void	set_underwear_color(std::string underwear_color);
 		void	set_darkest_secret(std::string darkest_secret);
 		std::string	get_field(std::string data);
-		void	init_contact(void);
+		int		init_contact(void);
 };
 
 #endif

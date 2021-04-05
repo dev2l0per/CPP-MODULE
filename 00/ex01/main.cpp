@@ -12,6 +12,8 @@
 
 #include "Phonebook.hpp"
 
+
+
 int main()
 {
 	std::string input;
@@ -19,12 +21,14 @@ int main()
 
 	while (1)
 	{
+		std::cin.clear();
 		phonebook.print_header();
 		std::getline(std::cin, input);
 		if (input == "ADD")
 		{
 			Contact new_contact;
-			new_contact.init_contact();
+			if (new_contact.init_contact() == -1)
+				break ;
 			phonebook.add_contact(new_contact);
 		}
 		else if (input == "SEARCH")
@@ -33,18 +37,24 @@ int main()
 
 			phonebook.print_phonebook();
 			std::cout << "Enter Contact Index : ";
+			std::cin.clear();
 			std::cin >> index;
+			if (std::cin.eof() == true)
+				break ;
 			phonebook.print_search_header();
 			phonebook.search_contact(index);
 			std::cout << "|";
 			std::cout << std::setfill('-') << std::setw(44);
 			std::cout << "|" << std::endl;
+			std::cin.ignore();
 		}
 		else if (input == "EXIT")
 		{
 			std::cout << "Juyang's Phonebook Exit" << std::endl;
 			break ;
 		}
+		else if (std::cin.eof() == true)
+			break ;
 		else
 		{
 			std::cout << "INVALID COMMAND" << std::endl;
