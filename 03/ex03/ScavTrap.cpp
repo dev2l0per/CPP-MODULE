@@ -33,7 +33,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	this->_armorDamageReduction = 3;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name);
+ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name)
 {
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
@@ -45,7 +45,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name);
 	this->_armorDamageReduction = 3;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &arg) : ClapTrap(arg.getName());
+ScavTrap::ScavTrap(ScavTrap const &arg) : ClapTrap(arg._name)
 {
 	this->_hitPoints = arg.getHitPoints();
 	this->_maxHitPoints = arg.getMaxHitPoints();

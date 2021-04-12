@@ -23,7 +23,7 @@ class ScavTrap : public ClapTrap
 		static std::string	_challenge[5];
 	public:
 		ScavTrap();
-		ScavTrap(std::string name);
+		ScavTrap(std::string const &name);
 		ScavTrap(ScavTrap const &arg);
 		virtual ~ScavTrap();
 		ScavTrap	&operator=(ScavTrap	const &arg);

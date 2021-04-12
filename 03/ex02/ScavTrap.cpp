@@ -22,39 +22,39 @@ std::string	ScavTrap::_challenge[5] = {
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	this->_hitPoints = 100;
-	this->_maxHitPoints = 100;
-	this->_energyPoints = 50;
-	this->_maxEnergyPoints = 50;
-	this->_level = 1;
-	this->_name = std::string("SC4V-TP");
-	this->_meleeAttackDamage = 20;
-	this->_rangedAttackDamage = 15;
-	this->_armorDamageReduction = 3;
+	this->setHitPoints(100);
+	this->setMaxHitPoints(100);
+	this->setEnergyPoints(50);
+	this->setMaxEnergyPoints(50);
+	this->setLevel(1);
+	this->setName(std::string("SC4V-TP"));
+	this->setMeleeAttackDamage(20);
+	this->setRangedAttackDamage(15);
+	this->setArmorDamageReduction(3);
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name);
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->_hitPoints = 100;
-	this->_maxHitPoints = 100;
-	this->_energyPoints = 50;
-	this->_maxEnergyPoints = 50;
-	this->_level = 1;
-	this->_meleeAttackDamage = 20;
-	this->_rangedAttackDamage = 15;
-	this->_armorDamageReduction = 3;
+	this->setHitPoints(100);
+	this->setMaxHitPoints(100);
+	this->setEnergyPoints(50);
+	this->setMaxEnergyPoints(50);
+	this->setLevel(1);
+	this->setMeleeAttackDamage(20);
+	this->setRangedAttackDamage(15);
+	this->setArmorDamageReduction(3);
 }
 
-ScavTrap::ScavTrap(ScavTrap const &arg) : ClapTrap(arg.getName());
+ScavTrap::ScavTrap(ScavTrap const &arg) : ClapTrap()
 {
-	this->_hitPoints = arg.getHitPoints();
-	this->_maxHitPoints = arg.getMaxHitPoints();
-	this->_energyPoints = arg.getEnergyPoints();
-	this->_maxEnergyPoints = arg.getMaxEnergyPoints();
-	this->_level = arg.getLevel();
-	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
-	this->_rangedAttackDamage = arg.getRangedAttackDamage();
-	this->_armorDamageReduction = arg.getArmorDamageReduction();
+	this->setHitPoints(arg.getHitPoints());
+	this->setMaxHitPoints(arg.getMaxHitPoints());
+	this->setEnergyPoints(arg.getEnergyPoints());
+	this->setMaxEnergyPoints(arg.getMaxEnergyPoints());
+	this->setLevel(arg.getLevel());
+	this->setMeleeAttackDamage(arg.getMeleeAttackDamage());
+	this->setRangedAttackDamage(arg.getRangedAttackDamage());
+	this->setArmorDamageReduction(arg.getArmorDamageReduction());
 }
 
 ScavTrap::~ScavTrap()
@@ -64,15 +64,14 @@ ScavTrap::~ScavTrap()
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &arg)
 {
-	this->_hitPoints = arg.getHitPoints();
-	this->_maxHitPoints = arg.getMaxHitPoints();
-	this->_energyPoints = arg.getEnergyPoints();
-	this->_maxEnergyPoints = arg.getMaxEnergyPoints();
-	this->_level = arg.getLevel();
-	this->_name = arg.getName();
-	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
-	this->_rangedAttackDamage = arg.getRangedAttackDamage();
-	this->_armorDamageReduction = arg.getArmorDamageReduction();
+	this->setHitPoints(arg.getHitPoints());
+	this->setMaxHitPoints(arg.getMaxHitPoints());
+	this->setEnergyPoints(arg.getEnergyPoints());
+	this->setMaxEnergyPoints(arg.getMaxEnergyPoints());
+	this->setLevel(arg.getLevel());
+	this->setMeleeAttackDamage(arg.getMeleeAttackDamage);
+	this->setRangedAttackDamage(arg.getRangedAttackDamage());
+	this->setArmorDamageReduction(arg.getArmorDamageReduction());
 	return (*this);
 }
 
@@ -88,17 +87,17 @@ void	ScavTrap::meleeAttack(std::string const &target)
 
 void	ScavTrap::takeDamage(unsigned int amount)
 {
-	this->_hitPoints = this->_hitPoints - amount + this->_armorDamageReduction;
-	if (this->_hitPoints < 0)
-		this->_hitPoints = 0;
+	this->setHitPoints(this->getHitPoints() - amount + this->getArmorDamageReduction());
+	if (this->getHitPoints() < 0)
+		this->setHitPoints(0);
 	std::cout << "SC4V-TP <" << this->getName() << "> took " << amount << " Damage. his HP is " << this->getHitPoints() << std::endl;
 }
 
 void	ScavTrap::beRepaired(unsigned int amount)
 {
-	this->_hitPoints = this->_hitPoints + amount;
-	if (this->_hitPoints > this->_maxHitPoints)
-		this->_hitPoints = this->_maxHitPoints;
+	this->setHitPoints(this->getHitPoints() + amount);
+	if (this->getHitPoints() > this->getMaxHitPoints())
+		this->setHitPoints(this->getMaxHitPoints());
 	std::cout << "SC4V-TP <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
 }
 

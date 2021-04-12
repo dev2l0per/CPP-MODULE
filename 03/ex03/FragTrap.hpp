@@ -23,7 +23,7 @@ class FragTrap : public ClapTrap
 		static std::string _skillList[5];
 	public:
 		FragTrap();
-		FragTrap(std::string name);
+		FragTrap(std::string const &name);
 		FragTrap(FragTrap const &arg);
 		virtual ~FragTrap();
 		FragTrap	&operator=(FragTrap const &arg);

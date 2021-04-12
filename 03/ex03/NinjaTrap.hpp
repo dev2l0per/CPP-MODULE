@@ -24,7 +24,7 @@ class NinjaTrap : public ClapTrap
 	private:
 	public:
 		NinjaTrap();
-		NinjaTrap(std::string name);
+		NinjaTrap(std::string const &name);
 		NinjaTrap(NinjaTrap const &arg);
 		virtual ~NinjaTrap();
 		NinjaTrap &operator=(NinjaTrap const &arg);

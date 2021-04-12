@@ -25,7 +25,7 @@ NinjaTrap::NinjaTrap() : ClapTrap()
 	this->_armorDamageReduction = 0;
 }
 
-NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
+NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name)
 {
 	this->_hitPoints = 60;
 	this->_maxHitPoints = 60;
@@ -37,7 +37,7 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
 	this->_armorDamageReduction = 0;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const &arg) : ClapTrap(arg.name)
+NinjaTrap::NinjaTrap(NinjaTrap const &arg) : ClapTrap(arg._name)
 {
 	this->_hitPoints = arg.getHitPoints();
 	this->_maxHitPoints = arg.getMaxHitPoints();
@@ -93,7 +93,22 @@ void	NinjaTrap::beRepaired(unsigned int amount)
 	std::cout << "N1NJ4-TP <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
 }
 
-void	ninjaShoebox(FragTrap &trap)
+void	NinjaTrap::ninjaShoebox(FragTrap &trap)
 {
-	
+	std::cout << "N1NJ4-TP <" << this->getName() << "> get ShoeBox FR4G-TP <" << trap.getName() << ">" << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(ScavTrap &trap)
+{
+	std::cout << "NINJ4-TP <" << this->getName() << "> get ShoeBox SC4V-TP <" << trap.getName() << ">" << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(ClapTrap &trap)
+{
+	std::cout << "N1NJ4-TP <" << this->getName() << "> get ShoeBox CL4P-TP <" << trap.getName() << ">" << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(NinjaTrap &trap)
+{
+	std::cout << "N1NJ4-TP <" << this->getName() << "> get ShoeBox N1NJ4-TP <" << trap.getName() << ">" << std::endl;
 }

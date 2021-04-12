@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-	protected:
+	private:
 		int	_hitPoints;
 		int	_maxHitPoints;
 		int	_energyPoints;
@@ -30,7 +30,7 @@ class ClapTrap
 		int	_armorDamageReduction;
 	public:
 		ClapTrap();
-		ClapTrap(std::string name);
+		ClapTrap(std::string const &name);
 		ClapTrap(ClapTrap const &arg);
 		virtual ~ClapTrap();
 		ClapTrap	&operator=(ClapTrap const &arg);
@@ -48,6 +48,16 @@ class ClapTrap
 		int getMeleeAttackDamage(void) const;
 		int getRangedAttackDamage(void) const;
 		int getArmorDamageReduction(void) const;
+
+		void setHitPoints(int const hitPoints);
+		void setMaxHitPoints(int const maxHitPoints);
+		void setEnergyPoints(int const energyPoints);
+		void setMaxEnergyPoints(int const maxEnergyPoints);
+		void setLevel(int const level);
+		void setName(std::string const name);
+		void setMeleeAttackDamage(int const meleeAttackDamage);
+		void setRangedAttackDamage(int const rangedAttackDamage);
+		void setArmorDamageReduction(int const armorDamageReduction);
 };
 
 #endif

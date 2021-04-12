@@ -13,6 +13,8 @@
 #include <iostream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "ClapTrap.hpp"
 
 int main(void)
 {
