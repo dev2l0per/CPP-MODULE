@@ -19,13 +19,13 @@ class Fixed
 {
 private:
 	int	_value;
-	static const int	_bits = 8;
+	static const int _bits = 8;
 public:
 	Fixed();
 	virtual ~Fixed();
 	Fixed(Fixed const &arg);
 	Fixed&	operator=(Fixed const &arg);
-	int	getRawBits(void);
+	int	getRawBits(void) const;
 	void	setRawBits(int const raw);
 };
 

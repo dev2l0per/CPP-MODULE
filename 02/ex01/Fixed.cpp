@@ -33,7 +33,7 @@ Fixed::Fixed(float const value)
 Fixed::Fixed(Fixed const &arg)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = arg;
+	this->_value = arg._value;
 }
 
 Fixed::~Fixed()
