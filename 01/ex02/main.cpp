@@ -40,9 +40,10 @@ int		main() {
 	spawnZombieOnTheHeap(event);
 	spawnZombieOnTheHeap(event);
 
-	stackZombie.set_name("Stack smasher");
-	stackZombie.set_type("");
+	stackZombie.set_name("Stack");
+	stackZombie.set_type("onTheStack");
 	stackZombie.announce();
 
-	system("leaks ZombieEvent");
+	// system("leaks ZombieEvent");
+	return (0);
 }

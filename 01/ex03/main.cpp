@@ -20,7 +20,7 @@ int		main() {
 	ZombieHorde	z(5);
 	
 	std::cout << std::endl << "Another one!" << std::endl << std::endl;
-	// ZombieHorde biggerz(10);
+	ZombieHorde biggerz(10);
 	z.announce();
 
 	// system("leaks ZombieHorde");

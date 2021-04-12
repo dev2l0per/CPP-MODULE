@@ -18,7 +18,7 @@
 class Human
 {
 	private:
-		const Brain	_brain;
+		Brain	_brain;
 	public:
 		Human();
 		virtual	~Human();

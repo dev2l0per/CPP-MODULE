@@ -46,6 +46,7 @@ ZombieHorde::ZombieHorde(std::string type, int N)
 		{
 			this->_zombieCrowd[i].set_name(randomName());
 			this->_zombieCrowd[i].set_type(this->_type);
+			this->_zombieCrowd[i].announce();
 		}
 		std::cout << this->_count << " Zombies are Born !" << std::endl;
 	}
