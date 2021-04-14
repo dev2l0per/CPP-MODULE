@@ -15,51 +15,94 @@
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
 #include "ClapTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main(void)
 {
 	srand(time(NULL));
 
-	std::cout << std::endl;
+	FragTrap *frag = new FragTrap("FR4G");
+	frag->vaulthunter_dot_exe("CL4P-TP");
+	frag->meleeAttack("CL4P-TP");
+	frag->rangedAttack("CL4P-TP");
+	frag->takeDamage(24);
+	frag->beRepaired(50);
+	frag->takeDamage(42);
+	frag->takeDamage(100);
+	frag->beRepaired(125);
+	frag->vaulthunter_dot_exe("CL4P-TP");
+	frag->vaulthunter_dot_exe("CL4P-TP");
+	frag->vaulthunter_dot_exe("CL4P-TP");
+	frag->vaulthunter_dot_exe("CL4P-TP");
 
-    // FragTrap frag("Frag");
-    // ScavTrap scav("Scav");
-    // NinjaTrap ninj("Ninj");
-    // ClapTrap clap;
+	std::cout << "---" << std::endl;
 
-    // ninj.ninjaShoebox(frag);
-    // ninj.ninjaShoebox(scav);
-    // ninj.ninjaShoebox(ninj);
-    // ninj.ninjaShoebox(clap);
-    
-    // ScavTrap clap("Clap");
-    // ScavTrap trap("Trap");
-    // FragTrap frag("Frag");
-    // FragTrap prap;
+	ScavTrap *scav = new ScavTrap("SC4V");
+	scav->challengeNewComer();
+	scav->meleeAttack("CL4P-TP");
+	scav->rangedAttack("CL4P-TP");
+	scav->takeDamage(24);
+	scav->beRepaired(50);
+	scav->takeDamage(42);
+	scav->takeDamage(100);
+	scav->beRepaired(125);
+	scav->challengeNewComer();
+	scav->challengeNewComer();
+	scav->challengeNewComer();
+	scav->challengeNewComer();
 
-    // prap = frag;
-    
-	// std::cout << std::endl;
-    // clap.rangedAttack("Trap");
-    // trap.takeDamage(20);
-    // clap.meleeAttack("Trap");
-    // trap.takeDamage(30);
-    // trap.beRepaired(35);
-    // frag.rangedAttack("Clap");
-    // trap.beRepaired(80);
-    // trap.takeDamage(120);
-    // frag.beRepaired(7);
-    // trap.beRepaired(33);
-    // frag.takeDamage(10);
-    
-    // frag.vaulthunter_dot_exe("Clap");
-    // clap.challengeNewComer();
-    // clap.challengeNewComer();
-    // clap.challengeNewComer();
-    // clap.challengeNewComer();
+	std::cout << "---" << std::endl;
 
-    
-	std::cout << std::endl;
+	ClapTrap clap("CL4P");
+	NinjaTrap *ninja = new NinjaTrap("NINJ4");
+	ninja->ninjaShoebox(*ninja);
+	ninja->meleeAttack("CL4P-TP");
+	ninja->rangedAttack("CL4P-TP");
+	ninja->takeDamage(24);
+	ninja->beRepaired(50);
+	ninja->takeDamage(42);
+	ninja->takeDamage(100);
+	ninja->beRepaired(125);
+	ninja->ninjaShoebox(*frag);
+	ninja->ninjaShoebox(*frag);
+	ninja->ninjaShoebox(*frag);
+	ninja->ninjaShoebox(clap);
+	ninja->ninjaShoebox(*scav);
+	ninja->ninjaShoebox(*scav);
+	ninja->ninjaShoebox(*scav);
+	ninja->ninjaShoebox(*scav);
+	ninja->ninjaShoebox(clap);
+
+	std::cout << "---" << std::endl;
+
+	SuperTrap *super = new SuperTrap("SUP3R");
+	std::cout << super->getHitPoints() << std::endl;
+	super->ninjaShoebox(*static_cast<NinjaTrap*>(super));
+	super->ninjaShoebox(*static_cast<FragTrap*>(super));
+	super->meleeAttack("CL4P-TP");
+	super->rangedAttack("CL4P-TP");
+	super->takeDamage(24);
+	super->beRepaired(50);
+	super->takeDamage(42);
+	super->takeDamage(100);
+	super->beRepaired(125);
+	super->vaulthunter_dot_exe("CL4P-TP");
+	super->vaulthunter_dot_exe("CL4P-TP");
+	super->ninjaShoebox(*frag);
+	super->ninjaShoebox(*frag);
+	super->ninjaShoebox(clap);
+	super->ninjaShoebox(*scav);
+	super->ninjaShoebox(*scav);
+	super->ninjaShoebox(*scav);
+	super->ninjaShoebox(clap);
+
+
+	std::cout << "---" << std::endl;
+
+	delete frag;
+	delete scav;
+	delete ninja;
+	delete super;
 
 	return (0);
 }

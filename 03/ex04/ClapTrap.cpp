@@ -23,6 +23,8 @@ ClapTrap::ClapTrap()
 	this->_meleeAttackDamage = 0;
 	this->_rangedAttackDamage = 0;
 	this->_armorDamageReduction = 0;
+
+	std::cout << "CLAP TRAP DEFAULT CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const &name)
@@ -36,6 +38,8 @@ ClapTrap::ClapTrap(std::string const &name)
 	this->_meleeAttackDamage = 0;
 	this->_rangedAttackDamage = 0;
 	this->_armorDamageReduction = 0;
+	
+	std::cout << "CLAP TRAP NAME CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &arg)
@@ -49,11 +53,13 @@ ClapTrap::ClapTrap(ClapTrap const &arg)
 	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
 	this->_rangedAttackDamage = arg.getRangedAttackDamage();
 	this->_armorDamageReduction = arg.getArmorDamageReduction();
+
+	std::cout << "CLAP TRAP COPY CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	
+	std::cout << "CLAP TRAP DESTRUCTOR IS CALLED!" << std::endl;	
 }
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &arg)
@@ -72,12 +78,12 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &arg)
 
 void	ClapTrap::rangedAttack(std::string const &target)
 {
-	std::cout << "CL4P-TP <" << this->getName() << "> attacks <" << target << "> at range, causing <" << this->getRangedAttackDamage() << "> points of damage!" << std::endl;
+	std::cout << "TR4P <" << this->getName() << "> attacks <" << target << "> at range, causing <" << this->getRangedAttackDamage() << "> points of damage!" << std::endl;
 }
 
 void	ClapTrap::meleeAttack(std::string const &target)
 {
-	std::cout << "CL4P-TP <" << this->getName() << "> attacks <" << target << "> at melee, causing <" << this->getMeleeAttackDamage() << "> points of damage!" << std::endl;
+	std::cout << "TR4P <" << this->getName() << "> attacks <" << target << "> at melee, causing <" << this->getMeleeAttackDamage() << "> points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)

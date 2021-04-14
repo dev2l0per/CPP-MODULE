@@ -23,6 +23,8 @@ ClapTrap::ClapTrap()
 	this->_meleeAttackDamage = 0;
 	this->_rangedAttackDamage = 0;
 	this->_armorDamageReduction = 0;
+
+	std::cout << "Clap Trap DEFAULT Constructor Called!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const &name)
@@ -36,6 +38,8 @@ ClapTrap::ClapTrap(std::string const &name)
 	this->_meleeAttackDamage = 0;
 	this->_rangedAttackDamage = 0;
 	this->_armorDamageReduction = 0;
+
+	std::cout << "Clap Trap NAME Constructor Called!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &arg)
@@ -49,11 +53,13 @@ ClapTrap::ClapTrap(ClapTrap const &arg)
 	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
 	this->_rangedAttackDamage = arg.getRangedAttackDamage();
 	this->_armorDamageReduction = arg.getArmorDamageReduction();
+
+	std::cout << "Scav Trap COPY Constructor Called!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	
+	std::cout << "Clap Trap Destructor Called!" << std::endl;	
 }
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &arg)
@@ -85,7 +91,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	this->_hitPoints = this->_hitPoints - amount + this->_armorDamageReduction;
 	if (this->_hitPoints < 0)
 		this->_hitPoints = 0;
-	std::cout << "CL4P-TP <" << this->getName() << "> took " << amount << " Damage. his HP is " << this->getHitPoints() << std::endl;
+	std::cout << "TR4P <" << this->getName() << "> took " << amount << " Damage. his HP is " << this->getHitPoints() << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -93,7 +99,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	this->_hitPoints = this->_hitPoints + amount;
 	if (this->_hitPoints > this->_maxHitPoints)
 		this->_hitPoints = this->_maxHitPoints;
-	std::cout << "CL4P-TP <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
+	std::cout << "TR4P <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
 }
 
 int		ClapTrap::getHitPoints(void) const

@@ -23,6 +23,8 @@ NinjaTrap::NinjaTrap() : ClapTrap()
 	this->setMeleeAttackDamage(60);
 	this->setRangedAttackDamage(5);
 	this->setArmorDamageReduction(0);
+
+	std::cout << "NINJA TRAP DEFAULT CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name)
@@ -35,15 +37,18 @@ NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name)
 	this->setMeleeAttackDamage(60);
 	this->setRangedAttackDamage(5);
 	this->setArmorDamageReduction(0);
+
+	std::cout << "NINJA TRAP NAME CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(NinjaTrap const &arg) : ClapTrap(arg)
 {
+	std::cout << "NINJA TRAP COPY CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 NinjaTrap::~NinjaTrap()
 {
-
+	std::cout << "NINJA TRAP DESTRUCTOR IS CALLED!" << std::endl;
 }
 
 NinjaTrap	&NinjaTrap::operator=(NinjaTrap const &arg)
@@ -57,31 +62,6 @@ NinjaTrap	&NinjaTrap::operator=(NinjaTrap const &arg)
 	this->setRangedAttackDamage(arg.getRangedAttackDamage());
 	this->setArmorDamageReduction(arg.getArmorDamageReduction());
 	return (*this);
-}
-void	NinjaTrap::rangedAttack(std::string const &target)
-{
-	std::cout << "N1NJ4-TP <" << this->getName() << "> attacks <" << target << "> at range, causing <" << this->getRangedAttackDamage() << "> points of damage!" << std::endl;
-}
-
-void	NinjaTrap::meleeAttack(std::string const &target)
-{
-	std::cout << "N1NJ4-TP <" << this->getName() << "> attacks <" << target << "> at melee, causing <" << this->getMeleeAttackDamage() << "> points of damage!" << std::endl;
-}
-
-void	NinjaTrap::takeDamage(unsigned int amount)
-{
-	this->setHitPoints(this->getHitPoints() - amount + this->getArmorDamageReduction());
-	if (this->getHitPoints() < 0)
-		this->setHitPoints(0);
-	std::cout << "N1NJ4-TP <" << this->getName() << "> took " << amount << " Damage. his HP is " << this->getHitPoints() << std::endl;
-}
-
-void	NinjaTrap::beRepaired(unsigned int amount)
-{
-	this->setHitPoints(this->getHitPoints() + amount);
-	if (this->getHitPoints() > this->getMaxHitPoints())
-		this->setHitPoints(this->getMaxHitPoints());
-	std::cout << "N1NJ4-TP <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(FragTrap &trap)

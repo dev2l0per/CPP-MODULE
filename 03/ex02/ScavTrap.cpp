@@ -31,6 +31,8 @@ ScavTrap::ScavTrap() : ClapTrap()
 	this->setMeleeAttackDamage(20);
 	this->setRangedAttackDamage(15);
 	this->setArmorDamageReduction(3);
+
+	std::cout << "Scav Trap DEFAULT Constructor Called!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -43,15 +45,18 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->setMeleeAttackDamage(20);
 	this->setRangedAttackDamage(15);
 	this->setArmorDamageReduction(3);
+
+	std::cout << "Scav Trap NAME Constructor Called!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &arg) : ClapTrap(arg)
 {
+	std::cout << "Scav Trap COPY Constructor Called!" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-
+	std::cout << "Scav Trap Destructor Called!" << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &arg)
@@ -75,22 +80,6 @@ void	ScavTrap::rangedAttack(std::string const &target)
 void	ScavTrap::meleeAttack(std::string const &target)
 {
 	std::cout << "SC4V-TP <" << this->getName() << "> attacks <" << target << "> at melee, causing <" << this->getMeleeAttackDamage() << "> points of damage!" << std::endl;
-}
-
-void	ScavTrap::takeDamage(unsigned int amount)
-{
-	this->setHitPoints(this->getHitPoints() - amount + this->getArmorDamageReduction());
-	if (this->getHitPoints() < 0)
-		this->setHitPoints(0);
-	std::cout << "SC4V-TP <" << this->getName() << "> took " << amount << " Damage. his HP is " << this->getHitPoints() << std::endl;
-}
-
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	this->setHitPoints(this->getHitPoints() + amount);
-	if (this->getHitPoints() > this->getMaxHitPoints())
-		this->setHitPoints(this->getMaxHitPoints());
-	std::cout << "SC4V-TP <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
 }
 
 void	ScavTrap::challengeNewComer(void) const

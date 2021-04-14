@@ -23,6 +23,8 @@ NinjaTrap::NinjaTrap() : ClapTrap()
 	this->setMeleeAttackDamage(60);
 	this->setRangedAttackDamage(5);
 	this->setArmorDamageReduction(0);
+
+	std::cout << "Ninja Trap DEFAULT Constructor Called!" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name)
@@ -35,15 +37,18 @@ NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name)
 	this->setMeleeAttackDamage(60);
 	this->setRangedAttackDamage(5);
 	this->setArmorDamageReduction(0);
+
+	std::cout << "Ninja Trap NAME Constructor Called!" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(NinjaTrap const &arg) : ClapTrap(arg)
 {
+	std::cout << "Ninja Trap COPY Constructor Called!" << std::endl;
 }
 
 NinjaTrap::~NinjaTrap()
 {
-
+	std::cout << "Ninja Trap Destructor Called!" << std::endl;
 }
 
 NinjaTrap	&NinjaTrap::operator=(NinjaTrap const &arg)

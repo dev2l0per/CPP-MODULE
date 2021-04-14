@@ -23,6 +23,8 @@ ClapTrap::ClapTrap()
 	this->_meleeAttackDamage = 0;
 	this->_rangedAttackDamage = 0;
 	this->_armorDamageReduction = 0;
+
+	std::cout << "Clap Trap DEFAULT Constructor Called!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const &name)
@@ -36,6 +38,8 @@ ClapTrap::ClapTrap(std::string const &name)
 	this->_meleeAttackDamage = 0;
 	this->_rangedAttackDamage = 0;
 	this->_armorDamageReduction = 0;
+
+	std::cout << "Clap Trap NAME Constructor Called!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &arg)
@@ -49,11 +53,13 @@ ClapTrap::ClapTrap(ClapTrap const &arg)
 	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
 	this->_rangedAttackDamage = arg.getRangedAttackDamage();
 	this->_armorDamageReduction = arg.getArmorDamageReduction();
+
+	std::cout << "Clap Trap COPY Constructor Called!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	
+	std::cout << "Clap Trap Destructor Called!" << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &arg)

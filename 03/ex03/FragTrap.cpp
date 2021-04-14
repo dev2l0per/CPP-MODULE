@@ -31,6 +31,8 @@ FragTrap::FragTrap() : ClapTrap()
 	this->setMeleeAttackDamage(30);
 	this->setRangedAttackDamage(20);
 	this->setArmorDamageReduction(5);
+
+	std::cout << "Frag Trap DEFAULT Constructor Called!" << std::endl;
 }
 
 FragTrap::FragTrap(std::string const &name) : ClapTrap(name)
@@ -43,15 +45,18 @@ FragTrap::FragTrap(std::string const &name) : ClapTrap(name)
 	this->setMeleeAttackDamage(30);
 	this->setRangedAttackDamage(20);
 	this->setArmorDamageReduction(5);
+
+	std::cout << "Frag Trap NAME Constructor Called!" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &arg) : ClapTrap(arg)
 {
+	std::cout << "Frag Trap COPY Constructor Called!" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-
+	std::cout << "Frag Trap Destructor Called!" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(FragTrap const &arg)

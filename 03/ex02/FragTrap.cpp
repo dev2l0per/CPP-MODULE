@@ -31,6 +31,8 @@ FragTrap::FragTrap() : ClapTrap()
 	this->setMeleeAttackDamage(30);
 	this->setRangedAttackDamage(20);
 	this->setArmorDamageReduction(5);
+
+	std::cout << "Frag Trap DEFAULT Constructor Called!" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -43,15 +45,18 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->setMeleeAttackDamage(30);
 	this->setRangedAttackDamage(20);
 	this->setArmorDamageReduction(5);
+
+	std::cout << "Frag Trap NAME Constructor Called!" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &arg) : ClapTrap(arg)
 {
+	std::cout << "Frag Trap COPY Constructor Called!" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-
+	std::cout << "Frag Trap Destructor Called!" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(FragTrap const &arg)
@@ -75,22 +80,6 @@ void	FragTrap::rangedAttack(std::string const &target)
 void	FragTrap::meleeAttack(std::string const &target)
 {
 	std::cout << "FR4G-TP <" << this->getName() << "> attacks <" << target << "> at melee, causing <" << this->getMeleeAttackDamage() << "> points of damage!" << std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	this->setHitPoints(this->getHitPoints() - amount + this->getArmorDamageReduction());
-	if (this->getHitPoints() < 0)
-		this->setHitPoints(0);
-	std::cout << "FR4G-TP <" << this->getName() << "> took " << amount << " Damage. his HP is " << this->getHitPoints() << std::endl;
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	this->setHitPoints(this->getHitPoints() + amount);
-	if (this->getHitPoints() > this->getMaxHitPoints())
-		this->setHitPoints(this->getMaxHitPoints());
-	std::cout << "FR4G-TP <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const &target)

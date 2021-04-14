@@ -31,6 +31,8 @@ ScavTrap::ScavTrap() : ClapTrap()
 	this->setMeleeAttackDamage(20);
 	this->setRangedAttackDamage(15);
 	this->setArmorDamageReduction(3);
+
+	std::cout << "SCAV TRAP DEFAULT CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name)
@@ -43,15 +45,17 @@ ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name)
 	this->setMeleeAttackDamage(20);
 	this->setRangedAttackDamage(15);
 	this->setArmorDamageReduction(3);
+	std::cout << "SCAV TRAP NAME CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &arg) : ClapTrap(arg)
 {
+	std::cout << "SCAV TRAP COPY CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-
+	std::cout << "SCAV TRAP DESTRUCTOR IS CALLED!" << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &arg)

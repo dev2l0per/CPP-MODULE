@@ -19,6 +19,16 @@
 class ScavTrap
 {
 	private:
+		int _hitPoints;
+		int _maxHitPoints;
+		int _energyPoints;
+		int _maxEnergyPoints;
+		int _level;
+		std::string _name;
+		int _meleeAttackDamage;
+		int _rangedAttackDamage;
+		int _armorDamageReduction;
+
 		static std::string	_challenge[5];
 	public:
 		ScavTrap();

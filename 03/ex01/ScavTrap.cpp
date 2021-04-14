@@ -24,26 +24,30 @@ ScavTrap::ScavTrap()
 {
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
-	this->_energyPoints = 100;
-	this->_maxEnergyPoints = 100;
+	this->_energyPoints = 50;
+	this->_maxEnergyPoints = 50;
 	this->_level = 1;
 	this->_name = std::string("SC4V-TP");
 	this->_meleeAttackDamage = 20;
 	this->_rangedAttackDamage = 15;
 	this->_armorDamageReduction = 3;
+
+	std::cout << "Scav Trap DEFAULT Constructor Called!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
 {
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
-	this->_energyPoints = 100;
-	this->_maxEnergyPoints = 100;
+	this->_energyPoints = 50;
+	this->_maxEnergyPoints = 50;
 	this->_level = 1;
 	this->_name = name;
 	this->_meleeAttackDamage = 20;
 	this->_rangedAttackDamage = 15;
 	this->_armorDamageReduction = 3;
+
+	std::cout << "Scav Trap NAME Constructor Called!" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &arg)
@@ -57,11 +61,13 @@ ScavTrap::ScavTrap(ScavTrap const &arg)
 	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
 	this->_rangedAttackDamage = arg.getRangedAttackDamage();
 	this->_armorDamageReduction = arg.getArmorDamageReduction();
+
+	std::cout << "Scav Trap COPY Constructor Called!" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-
+	std::cout << "Scav Trap Destructor Called!" << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &arg)

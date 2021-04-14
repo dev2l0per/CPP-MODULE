@@ -26,6 +26,9 @@ class SuperTrap : public FragTrap, public NinjaTrap
 		SuperTrap(SuperTrap const &arg);
 		virtual ~SuperTrap();
 		SuperTrap &operator=(SuperTrap const &arg);
+
+		void	rangedAttack(std::string const &target);
+		void	meleeAttack(std::string const &target);
 };
 
 #endif

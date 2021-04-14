@@ -34,10 +34,10 @@ class ClapTrap
 		ClapTrap(ClapTrap const &arg);
 		virtual ~ClapTrap();
 		ClapTrap	&operator=(ClapTrap const &arg);
-		virtual void	rangedAttack(std::string const &target);
-		virtual void	meleeAttack(std::string const &target);
-		virtual void	takeDamage(unsigned int amount);
-		virtual void	beRepaired(unsigned int amount);
+		void	rangedAttack(std::string const &target);
+		void	meleeAttack(std::string const &target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 		
 		int	getHitPoints(void) const;
 		int getMaxHitPoints(void) const;

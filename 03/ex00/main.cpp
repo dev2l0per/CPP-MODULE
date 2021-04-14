@@ -15,9 +15,9 @@
 
 int main(void)
 {
+	srand(time(NULL));
 	FragTrap frag("FR4G");
 
-	srand(time(NULL));
 	frag.vaulthunter_dot_exe("CL4P-TP");
 	frag.meleeAttack("CL4P-TP");
 	frag.rangedAttack("CL4P-TP");

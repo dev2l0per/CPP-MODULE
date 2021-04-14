@@ -31,6 +31,8 @@ FragTrap::FragTrap() : ClapTrap()
 	this->setMeleeAttackDamage(30);
 	this->setRangedAttackDamage(20);
 	this->setArmorDamageReduction(5);
+
+	std::cout << "FRAG TRAP DEFAULT CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 FragTrap::FragTrap(std::string const &name) : ClapTrap(name)
@@ -43,15 +45,18 @@ FragTrap::FragTrap(std::string const &name) : ClapTrap(name)
 	this->setMeleeAttackDamage(30);
 	this->setRangedAttackDamage(20);
 	this->setArmorDamageReduction(5);
+
+	std::cout << "FRAG TRAP NAME CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &arg) : ClapTrap(arg)
 {
+	std::cout << "FRAG TRAP COPY CONSTRUCTOR IS CALLED!" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-
+	std::cout << "FRAG TRAP DESTRUCTOR IS CALLED!" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(FragTrap const &arg)
@@ -65,32 +70,6 @@ FragTrap	&FragTrap::operator=(FragTrap const &arg)
 	this->setRangedAttackDamage(arg.getRangedAttackDamage());
 	this->setArmorDamageReduction(arg.getArmorDamageReduction());
 	return (*this);
-}
-
-void	FragTrap::rangedAttack(std::string const &target)
-{
-	std::cout << "FR4G-TP <" << this->getName() << "> attacks <" << target << "> at range, causing <" << this->getRangedAttackDamage() << "> points of damage!" << std::endl;
-}
-
-void	FragTrap::meleeAttack(std::string const &target)
-{
-	std::cout << "FR4G-TP <" << this->getName() << "> attacks <" << target << "> at melee, causing <" << this->getMeleeAttackDamage() << "> points of damage!" << std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	this->setHitPoints(this->getHitPoints() - amount + this->getArmorDamageReduction());
-	if (this->getHitPoints() < 0)
-		this->setHitPoints(0);
-	std::cout << "FR4G-TP <" << this->getName() << "> took " << amount << " Damage. his HP is " << this->getHitPoints() << std::endl;
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	this->setHitPoints(this->getHitPoints() + amount);
-	if (this->getHitPoints() > this->getMaxHitPoints())
-		this->setHitPoints(this->getMaxHitPoints());
-	std::cout << "FR4G-TP <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const &target)
