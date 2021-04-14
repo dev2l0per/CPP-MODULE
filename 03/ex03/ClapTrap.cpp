@@ -19,7 +19,7 @@ ClapTrap::ClapTrap()
 	this->_energyPoints = 0;
 	this->_maxEnergyPoints = 0;
 	this->_level = 0;
-	this->_name = std::string("");
+	this->_name = std::string("CL4P-TP");
 	this->_meleeAttackDamage = 0;
 	this->_rangedAttackDamage = 0;
 	this->_armorDamageReduction = 0;
@@ -45,7 +45,7 @@ ClapTrap::ClapTrap(ClapTrap const &arg)
 	this->_energyPoints = arg.getEnergyPoints();
 	this->_maxEnergyPoints = arg.getMaxEnergyPoints();
 	this->_level = arg.getLevel();
-	this->_name = arg.getName();
+	this->_name = std::string(arg.getName());
 	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
 	this->_rangedAttackDamage = arg.getRangedAttackDamage();
 	this->_armorDamageReduction = arg.getArmorDamageReduction();
@@ -63,7 +63,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &arg)
 	this->_energyPoints = arg.getEnergyPoints();
 	this->_maxEnergyPoints = arg.getMaxEnergyPoints();
 	this->_level = arg.getLevel();
-	this->_name = arg.getName();
+	this->_name = std::string(arg.getName());
 	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
 	this->_rangedAttackDamage = arg.getRangedAttackDamage();
 	this->_armorDamageReduction = arg.getArmorDamageReduction();

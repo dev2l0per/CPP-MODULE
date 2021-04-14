@@ -45,16 +45,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->setArmorDamageReduction(3);
 }
 
-ScavTrap::ScavTrap(ScavTrap const &arg) : ClapTrap()
+ScavTrap::ScavTrap(ScavTrap const &arg) : ClapTrap(arg)
 {
-	this->setHitPoints(arg.getHitPoints());
-	this->setMaxHitPoints(arg.getMaxHitPoints());
-	this->setEnergyPoints(arg.getEnergyPoints());
-	this->setMaxEnergyPoints(arg.getMaxEnergyPoints());
-	this->setLevel(arg.getLevel());
-	this->setMeleeAttackDamage(arg.getMeleeAttackDamage());
-	this->setRangedAttackDamage(arg.getRangedAttackDamage());
-	this->setArmorDamageReduction(arg.getArmorDamageReduction());
 }
 
 ScavTrap::~ScavTrap()
@@ -69,7 +61,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &arg)
 	this->setEnergyPoints(arg.getEnergyPoints());
 	this->setMaxEnergyPoints(arg.getMaxEnergyPoints());
 	this->setLevel(arg.getLevel());
-	this->setMeleeAttackDamage(arg.getMeleeAttackDamage);
+	this->setMeleeAttackDamage(arg.getMeleeAttackDamage());
 	this->setRangedAttackDamage(arg.getRangedAttackDamage());
 	this->setArmorDamageReduction(arg.getArmorDamageReduction());
 	return (*this);

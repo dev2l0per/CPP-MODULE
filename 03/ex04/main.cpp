@@ -32,31 +32,31 @@ int main(void)
     // ninj.ninjaShoebox(ninj);
     // ninj.ninjaShoebox(clap);
     
-    ScavTrap clap("Clap");
-    ScavTrap trap("Trap");
-    FragTrap frag("Frag");
-    FragTrap prap;
+    // ScavTrap clap("Clap");
+    // ScavTrap trap("Trap");
+    // FragTrap frag("Frag");
+    // FragTrap prap;
 
-    prap = frag;
+    // prap = frag;
     
-	std::cout << std::endl;
-    clap.rangedAttack("Trap");
-    trap.takeDamage(20);
-    clap.meleeAttack("Trap");
-    trap.takeDamage(30);
-    trap.beRepaired(35);
-    frag.rangedAttack("Clap");
-    trap.beRepaired(80);
-    trap.takeDamage(120);
-    frag.beRepaired(7);
-    trap.beRepaired(33);
-    frag.takeDamage(10);
+	// std::cout << std::endl;
+    // clap.rangedAttack("Trap");
+    // trap.takeDamage(20);
+    // clap.meleeAttack("Trap");
+    // trap.takeDamage(30);
+    // trap.beRepaired(35);
+    // frag.rangedAttack("Clap");
+    // trap.beRepaired(80);
+    // trap.takeDamage(120);
+    // frag.beRepaired(7);
+    // trap.beRepaired(33);
+    // frag.takeDamage(10);
     
-    frag.vaulthunter_dot_exe("Clap");
-    clap.challengeNewComer();
-    clap.challengeNewComer();
-    clap.challengeNewComer();
-    clap.challengeNewComer();
+    // frag.vaulthunter_dot_exe("Clap");
+    // clap.challengeNewComer();
+    // clap.challengeNewComer();
+    // clap.challengeNewComer();
+    // clap.challengeNewComer();
 
     
 	std::cout << std::endl;

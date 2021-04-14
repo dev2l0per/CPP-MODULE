@@ -47,14 +47,6 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(FragTrap const &arg) : ClapTrap(arg)
 {
-	this->setHitPoints(arg.getHitPoints());
-	this->setMaxHitPoints(arg.getMaxHitPoints());
-	this->setEnergyPoints(arg.getEnergyPoints());
-	this->setMaxEnergyPoints(arg.getMaxEnergyPoints());
-	this->setLevel(arg.getLevel());
-	this->setMeleeAttackDamage(arg.getMeleeAttackDamage());
-	this->setRangedAttackDamage(arg.getRangedAttackDamage());
-	this->setArmorDamageReduction(arg.getArmorDamageReduction());
 }
 
 FragTrap::~FragTrap()
@@ -69,7 +61,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &arg)
 	this->setEnergyPoints(arg.getEnergyPoints());
 	this->setMaxEnergyPoints(arg.getMaxEnergyPoints());
 	this->setLevel(arg.getLevel());
-	this->setMeleeAttackDamage(arg.getMeleeAttackDamage);
+	this->setMeleeAttackDamage(arg.getMeleeAttackDamage());
 	this->setRangedAttackDamage(arg.getRangedAttackDamage());
 	this->setArmorDamageReduction(arg.getArmorDamageReduction());
 	return (*this);

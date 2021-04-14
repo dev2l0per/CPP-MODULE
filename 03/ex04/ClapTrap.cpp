@@ -45,7 +45,7 @@ ClapTrap::ClapTrap(ClapTrap const &arg)
 	this->_energyPoints = arg.getEnergyPoints();
 	this->_maxEnergyPoints = arg.getMaxEnergyPoints();
 	this->_level = arg.getLevel();
-	this->_name = arg.getName();
+	this->_name = std::string(arg.getName());
 	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
 	this->_rangedAttackDamage = arg.getRangedAttackDamage();
 	this->_armorDamageReduction = arg.getArmorDamageReduction();
@@ -63,7 +63,7 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &arg)
 	this->_energyPoints = arg.getEnergyPoints();
 	this->_maxEnergyPoints = arg.getMaxEnergyPoints();
 	this->_level = arg.getLevel();
-	this->_name = arg.getName();
+	this->_name = std::string(arg.getName());
 	this->_meleeAttackDamage = arg.getMeleeAttackDamage();
 	this->_rangedAttackDamage = arg.getRangedAttackDamage();
 	this->_armorDamageReduction = arg.getArmorDamageReduction();
@@ -85,7 +85,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	this->_hitPoints = this->_hitPoints - amount + this->_armorDamageReduction;
 	if (this->_hitPoints < 0)
 		this->_hitPoints = 0;
-	std::cout << "CL4P-TP <" << this->getName() << "> took " << amount << " Damage. his HP is " << this->getHitPoints() << std::endl;
+	std::cout << "TR4P <" << this->getName() << "> took " << amount << " Damage. his HP is " << this->getHitPoints() << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -93,7 +93,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	this->_hitPoints = this->_hitPoints + amount;
 	if (this->_hitPoints > this->_maxHitPoints)
 		this->_hitPoints = this->_maxHitPoints;
-	std::cout << "CL4P-TP <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
+	std::cout << "TR4P <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
 }
 
 int		ClapTrap::getHitPoints(void) const
