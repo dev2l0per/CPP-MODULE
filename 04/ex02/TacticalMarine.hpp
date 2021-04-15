@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juyang <juyang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 20:16:25 by juyang            #+#    #+#             */
-/*   Updated: 2021/04/14 20:16:25 by juyang           ###   ########.fr       */
+/*   Created: 2021/04/15 16:33:29 by juyang            #+#    #+#             */
+/*   Updated: 2021/04/15 16:33:30 by juyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_HPP
-# define RADSCORPION_HPP
+#ifndef TACTICALMARINE_HPP
+# define TACTICALMARINE_HPP
 
 # include <iostream>
-# include "Enemy.hpp"
+# include "ISpaceMarine.hpp"
 
-class RadScorpion : public Enemy
+class TacticalMarine : public ISpaceMarine
 {
 	private:
+		
 
 	public:
-		RadScorpion(void);
-		RadScorpion(RadScorpion const &arg);
-		virtual ~RadScorpion(void);
+		TacticalMarine(void);
+		TacticalMarine(TacticalMarine const &arg);
+		virtual ~TacticalMarine(void);
 
-		RadScorpion&	operator=(RadScorpion const &arg);
+		TacticalMarine&	operator=(TacticalMarine const &arg);
+
+		virtual ISpaceMarine*	clone(void) const;
+		virtual void	battleCry(void) const;
+		virtual void	rangedAttack(void) const;
+		virtual void	meleeAttack(void) const;
 };
 
 #endif

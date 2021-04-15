@@ -5,27 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juyang <juyang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 18:52:58 by juyang            #+#    #+#             */
-/*   Updated: 2021/04/14 18:52:59 by juyang           ###   ########.fr       */
+/*   Created: 2021/04/15 16:34:17 by juyang            #+#    #+#             */
+/*   Updated: 2021/04/15 16:34:19 by juyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
+#include "AssaultTerminator.hpp"
+#include "Squad.hpp"
+#include "TacticalMarine.hpp"
 
-int		main(void)
+int	main(void)
 {
-	Sorcerer robert("Robert", "the Magnificent");
+	ISpaceMarine* bob = new TacticalMarine;
+	ISpaceMarine* jim = new AssaultTerminator;
 
-	Victim jim("Jimmy");
-	Peon joe("Joe");
-
-	std::cout << robert << jim << joe;
-
-	robert.polymorph(jim);
-	robert.polymorph(joe);
+	ISquad* vlc = new Squad;
+	vlc->push(bob);
+	vlc->push(jim);
+	for (int i = 0; i < vlc->getCount(); ++i)
+	{
+		ISpaceMarine* cur = vlc->getUnit(i);
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
+	delete vlc;
 
 	return 0;
 }

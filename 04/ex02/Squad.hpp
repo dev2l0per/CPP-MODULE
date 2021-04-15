@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   Squad.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juyang <juyang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 20:15:59 by juyang            #+#    #+#             */
-/*   Updated: 2021/04/14 20:15:59 by juyang           ###   ########.fr       */
+/*   Created: 2021/04/15 16:33:18 by juyang            #+#    #+#             */
+/*   Updated: 2021/04/15 16:33:18 by juyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+#ifndef SQUAD_HPP
+# define SQUAD_HPP
 
 # include <iostream>
+# include "ISquad.hpp"
 
-class Enemy
+class Squad : public ISquad
 {
 	private:
-		int	_hp;
-		std::string	_type;
-
-		Enemy(void);
+		int	_count;
+		ISpaceMarine	**_unit;
 
 	public:
-		Enemy(int hp, std::string const &type);
-		Enemy(Enemy const &arg);
-		virtual	~Enemy(void);
-		
-		Enemy&	operator=(Enemy const &arg);
+		Squad(void);
+		Squad(Squad const &arg);
+		virtual ~Squad(void);
 
-		std::string const& getType(void) const;
-		int	getHP(void) const;
+		Squad&	operator=(Squad const &arg);
 
-		virtual void	takeDamage(int);
+		virtual int	getCount(void) const;
+		virtual ISpaceMarine*	getUnit(int) const;
+		virtual int	push(ISpaceMarine *);
 };
 
 #endif

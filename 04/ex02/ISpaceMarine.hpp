@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juyang <juyang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 20:15:59 by juyang            #+#    #+#             */
-/*   Updated: 2021/04/14 20:15:59 by juyang           ###   ########.fr       */
+/*   Created: 2021/04/15 16:33:56 by juyang            #+#    #+#             */
+/*   Updated: 2021/04/15 16:33:57 by juyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+#ifndef ISPACEMARINE_HPP
+# define ISPACEMARINE_HPP
 
-# include <iostream>
-
-class Enemy
+class ISpaceMarine
 {
-	private:
-		int	_hp;
-		std::string	_type;
-
-		Enemy(void);
-
 	public:
-		Enemy(int hp, std::string const &type);
-		Enemy(Enemy const &arg);
-		virtual	~Enemy(void);
-		
-		Enemy&	operator=(Enemy const &arg);
-
-		std::string const& getType(void) const;
-		int	getHP(void) const;
-
-		virtual void	takeDamage(int);
+		virtual ~ISpaceMarine() {}
+		virtual ISpaceMarine* clone() const = 0;
+		virtual void battleCry() const = 0;
+		virtual void rangedAttack() const = 0;
+		virtual void meleeAttack() const = 0;
 };
 
 #endif
