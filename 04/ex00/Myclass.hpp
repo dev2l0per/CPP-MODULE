@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Myclass.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juyang <juyang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 18:52:58 by juyang            #+#    #+#             */
-/*   Updated: 2021/04/14 18:52:59 by juyang           ###   ########.fr       */
+/*   Created: 2021/04/19 15:25:22 by juyang            #+#    #+#             */
+/*   Updated: 2021/04/19 15:25:22 by juyang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
-#include "Myclass.hpp"
+#ifndef MYCLASS_HPP
+# define MYCLASS_HPP
 
-int		main(void)
+# include "Victim.hpp"
+
+class Myclass : public Victim
 {
-	Sorcerer robert("Robert", "the Magnificent");
+	private:
+		Myclass(void);
+	
+	public:
+		Myclass(std::string const &name);
+		Myclass(Myclass const &arg);
+		virtual ~Myclass(void);
 
-	Victim jim("Jimmy");
-	Peon joe("Joe");
+		Myclass&	operator=(Myclass const &arg);
 
-	Myclass myclass("juyang");
+		virtual void	getPolymorphed(void) const;
+};
 
-	std::cout << robert << jim << joe << myclass;
+std::ostream&	operator<<(std::ostream &os, Myclass const &arg);
 
-	robert.polymorph(jim);
-	robert.polymorph(joe);
-	robert.polymorph(myclass);
-
-	return 0;
-}
+#endif
