@@ -10,4 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Ice.hpp"
 
+Ice::Ice(void) : AMateria("ice")
+{
+
+}
+
+Ice::Ice(Ice const &arg) : AMateria(arg)
+{
+
+}
+
+Ice::~Ice(void)
+{
+
+}
+
+Ice&	Ice::operator=(Ice const &arg)
+{
+	AMateria::operator=(arg);
+	
+	return (*this);
+}
+
+AMateria*	Ice::clone(void) const
+{
+	return new Ice(*this);
+}
+
+void	Ice::use(ICharacter &target)
+{
+	AMateria::use(target);
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
