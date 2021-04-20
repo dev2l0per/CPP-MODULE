@@ -10,4 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
+# include <iostream>
+# include "ICharacter.hpp"
+
+class ICharacter;
+
+class AMateria
+{
+	private:
+		std::string	_type;
+		unsigned int _xp;
+
+		AMateria(void);
+
+	public:
+		AMateria(std::string const &type);
+		AMateria(AMateria const &arg);
+		virtual ~AMateria(void);
+
+		AMateria&	operator=(AMateria const &arg);
+
+		std::string const & getType(void) const;
+		unsigned int	getXP(void) const;
+
+		virtual AMateria* clone(void) const = 0;
+		virtual void use(ICharacter& target);
+};
+
+#endif
