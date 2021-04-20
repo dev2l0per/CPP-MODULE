@@ -14,7 +14,6 @@
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 #include "Peon.hpp"
-#include "Myclass.hpp"
 
 int		main(void)
 {
@@ -23,13 +22,10 @@ int		main(void)
 	Victim jim("Jimmy");
 	Peon joe("Joe");
 
-	Myclass myclass("juyang");
-
-	std::cout << robert << jim << joe << myclass;
+	std::cout << robert << jim << joe;
 
 	robert.polymorph(jim);
 	robert.polymorph(joe);
-	robert.polymorph(myclass);
 
 	return 0;
 }
