@@ -40,7 +40,7 @@ class ScavTrap
 		void	meleeAttack(std::string const &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		void	challengeNewComer(void) const;
+		void	challengeNewcomer(void) const;
 		
 		int	getHitPoints(void) const;
 		int getMaxHitPoints(void) const;

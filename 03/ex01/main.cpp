@@ -35,7 +35,7 @@ int main(void)
 
 	std::cout << "---" << std::endl;
 
-	scav.challengeNewComer();
+	scav.challengeNewcomer();
 	scav.meleeAttack("CL4P-TP");
 	scav.rangedAttack("CL4P-TP");
 	scav.takeDamage(24);
@@ -43,9 +43,9 @@ int main(void)
 	scav.takeDamage(42);
 	scav.takeDamage(100);
 	scav.beRepaired(125);
-	scav.challengeNewComer();
-	scav.challengeNewComer();
-	scav.challengeNewComer();
-	scav.challengeNewComer();
+	scav.challengeNewcomer();
+	scav.challengeNewcomer();
+	scav.challengeNewcomer();
+	scav.challengeNewcomer();
 	return (0);
 }

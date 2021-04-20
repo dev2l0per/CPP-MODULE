@@ -110,7 +110,7 @@ void	ScavTrap::beRepaired(unsigned int amount)
 	std::cout << "SC4V-TP <" << this->getName() << "> was repaired " << amount << ". his HP is " << this->getHitPoints() << std::endl;
 }
 
-void	ScavTrap::challengeNewComer(void) const
+void	ScavTrap::challengeNewcomer(void) const
 {
 	std::cout << "SC4V-TP <" << this->getName() << "> has new Challenge! (" << this->_challenge[rand() % 5] << ")" << std::endl;
 }

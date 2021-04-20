@@ -32,8 +32,6 @@ class Intern
 
 		Intern&	operator=(Intern const &arg);
 
-		Form*	getFormConstructor(int idx) const;
-
 		Form*	makeForm(std::string const &name, std::string const &target);
 
 		class	NotFoundFormException : public std::exception
