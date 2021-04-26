@@ -32,7 +32,7 @@ class Bureaucrat
 
 		void	increment(void);
 		void	decrement(void);
-		std::string const&	getName(void) const;
+		std::string	getName(void) const;
 		int	getGrade(void) const;
 
 		class	GradeTooHighException : public std::exception

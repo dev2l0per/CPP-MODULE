@@ -41,6 +41,8 @@ int main()
 {
     Intern someRandomIntern;
 
+	std::srand(std::time(NULL));
+
     testIntern(someRandomIntern, "presidential pardon", "target1");
     testIntern(someRandomIntern, "robotomy request", "target2");
     testIntern(someRandomIntern, "shrubbery creation", "target3");

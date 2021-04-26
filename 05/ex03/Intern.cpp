@@ -47,7 +47,11 @@ Form*	Intern::makeForm(std::string const &name, std::string const &target)
 	for (int i = 0; i < 3; i++)
 	{
 		if (str[i] == name)
+		{
+			std::cout << "Intern creates <" << name << ">" << std::endl;
+			
 			return ((this->_formConstructor[i])(target));
+		}
 	}
 	throw Intern::NotFoundFormException();
 

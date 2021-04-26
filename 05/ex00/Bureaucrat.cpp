@@ -65,7 +65,7 @@ void	Bureaucrat::decrement(void)
 	this->_grade++;
 }
 
-std::string const&	Bureaucrat::getName(void) const
+std::string	Bureaucrat::getName(void) const
 {
 	return (this->_name);
 }

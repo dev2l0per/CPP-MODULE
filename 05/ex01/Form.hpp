@@ -39,6 +39,7 @@ class Form
 		bool const&	getSigned(void) const;
 		int const&	getGradeToSign(void) const;
 		int const&	getGradeToExecute(void) const;
+		void	setSigned(bool sign);
 
 		void	beSigned(Bureaucrat const &arg);
 

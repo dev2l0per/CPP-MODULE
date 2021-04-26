@@ -69,13 +69,18 @@ int const&	Form::getGradeToExecute(void) const
 	return (this->_gradeToExecute);
 }
 
+void	Form::setSigned(bool sign)
+{
+	this->_signed = sign;
+}
+
 void	Form::beSigned(Bureaucrat const &arg)
 {
 	if (arg.getGrade() > this->getGradeToSign())
 		throw Form::GradeTooLowException();
 	else if (this->getSigned() == true)
 		throw Form::AlreadySignException();
-	this->_signed = true;
+	this->setSigned(true);
 }
 
 const char*	Form::GradeTooHighException::what(void) const throw()
