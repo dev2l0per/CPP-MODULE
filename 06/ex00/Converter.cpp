@@ -165,16 +165,8 @@ void	Converter::convertFromChar(std::string str)
 	else
 		std::cout << "char: '" << this->_charValue << "'" << std::endl;
 	std::cout << "int: " << this->_intValue << std::endl;
-	if (this->_intValue == 0)
-	{
-		std::cout << "float: " << this->_floatValue << ".0f" << std::endl;
-		std::cout << "double: " << this->_doubleValue << ".0" << std::endl;
-	}
-	else
-	{
-		std::cout << "float: " << this->_floatValue << "f" << std::endl;
-		std::cout << "double: " << this->_doubleValue << std::endl;
-	}
+	std::cout << "float: " << this->_floatValue << ".0f" << std::endl;
+	std::cout << "double: " << this->_doubleValue << ".0" << std::endl;
 }
 
 void	Converter::convertFromInt(std::string str)
@@ -193,16 +185,8 @@ void	Converter::convertFromInt(std::string str)
 	else
 		std::cout << "char: '" << this->_charValue << "'" << std::endl;
 	std::cout << "int: " << this->_intValue << std::endl;
-	if (this->_intValue == 0)
-	{
-		std::cout << "float: " << this->_floatValue << ".0f" << std::endl;
-		std::cout << "double: " << this->_doubleValue << ".0" << std::endl;
-	}
-	else
-	{
-		std::cout << "float: " << this->_floatValue << "f" << std::endl;
-		std::cout << "double: " << this->_doubleValue << std::endl;
-	}
+	std::cout << "float: " << this->_floatValue << ".0f" << std::endl;
+	std::cout << "double: " << this->_doubleValue << ".0" << std::endl;
 }
 
 void	Converter::convertFromFloat(std::string str)
@@ -222,7 +206,7 @@ void	Converter::convertFromFloat(std::string str)
 	else
 		std::cout << "char: '" << this->_charValue << "'" << std::endl;
 	std::cout << "int: " << this->_intValue << std::endl;
-	if (this->_intValue == 0)
+	if (this->_floatValue == 0.0f)
 	{
 		std::cout << "float: " << this->_floatValue << ".0f" << std::endl;
 		std::cout << "double: " << this->_doubleValue << ".0" << std::endl;
@@ -250,7 +234,7 @@ void	Converter::convertFromDouble(std::string str)
 	else
 		std::cout << "char: '" << this->_charValue << "'" << std::endl;
 	std::cout << "int: " << this->_intValue << std::endl;
-	if (this->_intValue == 0)
+	if (this->_doubleValue == 0.0)
 	{
 		std::cout << "float: " << this->_floatValue << ".0f" << std::endl;
 		std::cout << "double: " << this->_doubleValue << ".0" << std::endl;
