@@ -37,6 +37,8 @@ void		*serialize(void)
 	intPtr = reinterpret_cast<int *>(str + 24);
 	*intPtr = rand() % INT_MAX;
 
+	std::cout << *strPtr << *intPtr << *str2Ptr << std::endl;
+
 	return reinterpret_cast<void *>(str);
 }
 

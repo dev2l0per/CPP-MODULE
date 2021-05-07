@@ -52,7 +52,7 @@ class Array
 		{
 			this->_size = arg.getSize();
 			
-			// delete[] this->_array;
+			delete[] this->_array;
 			this->_array = new T[this->_size];
 			for (unsigned int i = 0; i < this->_size; i++)
 			{

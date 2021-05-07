@@ -13,6 +13,17 @@
 #include "iter.hpp"
 #include <iostream>
 
+class Awesome {
+	private:
+		int _n;
+	
+	public:
+		Awesome( void ) : _n(42) { return; }
+		int	get( void ) const { return this->_n; }
+};
+
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
+
 template <typename T>
 void f(T &p)
 {
@@ -21,6 +32,12 @@ void f(T &p)
 
 int main(void)
 {
+	int tab[] = {0, 1, 2, 3, 4};
+	Awesome tab2[5];
+
+	iter (tab, 5, f);
+	iter (tab2, 5, f);
+
     int iarr[3] = {1, 2, 3};
     iter(iarr, 3, f);
     

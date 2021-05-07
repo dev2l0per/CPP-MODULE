@@ -23,12 +23,15 @@ Base	*generate(void)
 	randNum = rand() % 3;
 	if (randNum == 0)
 	{
+		std::cout << "Created A!" << std::endl;
 		return new A;
 	} else if (randNum == 1)
 	{
+		std::cout << "Created A!" << std::endl;
 		return new B;
 	} else if (randNum == 2)
 	{
+		std::cout << "Created A!" << std::endl;
 		return new C;
 	}
 	return (NULL);
