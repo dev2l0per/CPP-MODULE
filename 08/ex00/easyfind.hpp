@@ -14,10 +14,22 @@
 # define EASYFIND_HPP
 
 # include <algorithm>
+# include <exception>
+
+class EmptyContainerException : public std::exception
+{
+	public:
+		virtual const char* what(void) const throw()
+		{
+			return ("Exception Error : Empty Container Error!");
+		}
+};
 
 template <typename T>
 typename T::iterator easyfind(T &container, int value)
 {
+	if (container.begin() == container.end())
+		throw EmptyContainerException();
 	return (std::find(container.begin(), container.end(), value));
 }
 

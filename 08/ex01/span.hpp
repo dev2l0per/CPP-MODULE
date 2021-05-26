@@ -34,6 +34,21 @@ class Span
 		Span&	operator=(Span const &arg);
 
 		void	addNumber(int value);
+		template <typename T>
+		void	addNumber(T begin, T end)
+		{
+			std::vector<int>::iterator it;
+
+			for (; begin != end; begin++)
+			{
+				if (this->_vec.size() >= this->_N)
+					throw Span::VectorIsFullException();
+				it = std::find(this->_vec.begin(), this->_vec.end(), *begin);
+				if (it != this->_vec.end())
+					throw Span::AlreadyExistNumberException();
+				this->_vec.push_back(*begin);
+			}
+		}
 		
 		unsigned int	shortestSpan(void);
 		unsigned int	longestSpan(void);

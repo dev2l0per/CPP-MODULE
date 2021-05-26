@@ -72,6 +72,7 @@ unsigned int	Span::longestSpan(void)
 {
 	if (this->_vec.size() < 2)
 		throw Span::VectorSizeIsLackException();
+	std::sort(this->_vec.begin(), this->_vec.end());
 	return (*(--this->_vec.end()) - *(this->_vec.begin()));
 }
 

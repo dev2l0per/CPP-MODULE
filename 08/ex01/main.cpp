@@ -27,11 +27,11 @@ int main()
 	std::cout << sp2.longestSpan() << std::endl;
 
 	Span sp = Span(5);
-	sp.addNumber(5);
-	sp.addNumber(3);
-	sp.addNumber(17);
+	sp.addNumber(-5);
+	sp.addNumber(-3);
+	sp.addNumber(-17);
 	sp.addNumber(-2147483648);
-	sp.addNumber(2147483647);
+	sp.addNumber(-2147483647);
 	try
 	{
 		std::cout << sp.shortestSpan() << std::endl;
@@ -50,11 +50,20 @@ int main()
     }
 
 	Span test(10000);
+	std::vector<int> toTest;
     
 	std::srand(std::time(NULL));
-    for (int i = 0; i < 10000; i++)
-        test.addNumber(i);
-    // test.print_element();
+    for (int i = 0; i < 15000; i++)
+        toTest.push_back(i);
+		
+	try{
+		test.addNumber(toTest.begin(), toTest.end());
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	test.print_element();
     std::cout << test.shortestSpan() << std::endl;
     std::cout << test.longestSpan() << std::endl;
 
